@@ -2,7 +2,6 @@ import React, {useState,useEffect} from 'react';
 import {localMockData,url} from "./data.js";
 import {Container,Button,Input,TextField,IconButton} from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import SearchIcon from '@mui/icons-material/Search';
 import {root,completionResultsBox,searchStyle} from './styles.js'
 import axios from 'axios';
 
