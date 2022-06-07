@@ -8,7 +8,7 @@ export const root={
 export const completionResultsBox={
   margin:'auto',
   textAlign:'center',
-  width:'300px',
+  width:'220px',
   border:'2px lightGrey solid',
   marginTop:'10px',
   borderRadius:'5px',
