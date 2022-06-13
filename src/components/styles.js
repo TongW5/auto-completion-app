@@ -21,3 +21,9 @@ export const searchStyle={
   width:'350px',
   marginBottom:'10px'
 }
+
+export const resultItemStyle={
+  listStyleType: 'none',
+  fontSize:"16pt",
+  marginBottom:'3px'
+}

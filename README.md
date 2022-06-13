@@ -1,5 +1,5 @@
 # Auto Completion App
-https://auto-completion001/netlify.app
+https://auto-completion001.netlify.app
 
 An autocompletion app developed with ReactJS and styled with MUI
 

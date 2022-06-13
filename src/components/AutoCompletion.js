@@ -2,7 +2,7 @@ import React, {useState,useEffect} from 'react';
 import {localMockData,url} from "./data.js";
 import {Container,Button,Input,TextField,IconButton} from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import {root,completionResultsBox,searchStyle} from './styles.js'
+import {root,completionResultsBox,searchStyle,resultItemStyle} from './styles.js'
 import axios from 'axios';
 
 export const AutoCompletion=()=>{
@@ -37,7 +37,7 @@ export const AutoCompletion=()=>{
      if(inputContent.length>0){
      results = dataSet.filter(ele=>ele.toLowerCase().slice(0,inputContent.length)===inputContent.toLowerCase())
        if(results.length>0){
-         return results.map((ele,index)=>(<li key={index} style={{listStyleType: 'none',fontSize:"16pt",marginBottom:'3px'}} onClick={()=>setInputContent(ele)}>{ele}</li>))
+         return results.map((ele,index)=>(<li key={index} style={resultItemStyle} onClick={()=>setInputContent(ele)}>{ele}</li>))
        }
    }
   }
@@ -47,12 +47,25 @@ export const AutoCompletion=()=>{
     <Container id="root" style={root}>
     <p style={{height:'30px',fontSize:'24pt',fontWeight:'400'}}>Auto Completion Demo</p>
     <form style={searchStyle}>
-    <TextField id="searchField" type="text" variant="outlined" placeholder="search word" value={inputContent} style={{paddingTop:'10px'}}
-    onChange = {e => setInputContent(e.target.value)} />
+    <TextField 
+      id="searchField" 
+      type="text" 
+      variant="outlined" 
+      placeholder="search word" 
+      value={inputContent} 
+      style={{paddingTop:'10px'}}
+      onChange = {e => setInputContent(e.target.value)} />
 
     {/*search icon button for open the link in google search page*/}
-   <IconButton id='searchIcon' type="submit" sx={{ p: '10px' }} aria-label="search" href={"https://www.google.com/search?q="+inputContent} target="_blank" style={{marginTop:'10px'}}>
-        <SearchIcon fontSize='large' />
+   <IconButton 
+       id='searchIcon' 
+       type="submit" 
+       sx={{ p: '10px' }} 
+       aria-label="search" 
+       href={"https://www.google.com/search?q="+inputContent} 
+       target="_blank" 
+       style={{marginTop:'10px'}}>
+    <SearchIcon fontSize='large' />
    </IconButton>
     </form>
     
